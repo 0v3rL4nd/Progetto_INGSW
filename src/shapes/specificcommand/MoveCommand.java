@@ -30,10 +30,9 @@ public class MoveCommand implements Command {
 	}
 
 	@Override
-	public boolean undoIt() {
+	public void undoIt() {
 		object.moveTo(oldPos);
-		
-		return true;
-	}
+
+    }
 
 }

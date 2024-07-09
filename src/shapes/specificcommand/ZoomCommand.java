@@ -21,9 +21,8 @@ public class ZoomCommand implements Command {
 	}
 
 	@Override
-	public boolean undoIt() {
+	public void undoIt() {
 		object.scale(1.0 / factor);
-		return true;
-	}
+    }
 
 }

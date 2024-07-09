@@ -5,10 +5,6 @@ import java.util.LinkedList;
 public class HistoryCommandHandler implements CommandHandler {
 
 
-
-
-
-
 	private int maxHistoryLength = 100;
 
 	private final LinkedList<Command> history = new LinkedList<>();
@@ -35,12 +31,12 @@ public class HistoryCommandHandler implements CommandHandler {
 			// restituisce false: non può essere annullato
 			history.clear();
 		}
-		if (redoList.size() > 0)
+		if (!redoList.isEmpty())
 			redoList.clear();
 	}
 
 	public void redo() {
-		if (redoList.size() > 0) {
+		if (!redoList.isEmpty()) {
 			Command redoCmd = redoList.removeFirst();
 			redoCmd.doIt();
 			history.addFirst(redoCmd);
@@ -49,7 +45,7 @@ public class HistoryCommandHandler implements CommandHandler {
 	}
 
 	public void undo() {
-		if (history.size() > 0) {
+		if (!history.isEmpty()) {
 			Command undoCmd = history.removeFirst();
 			undoCmd.undoIt();
 			redoList.addFirst(undoCmd);
@@ -64,4 +60,7 @@ public class HistoryCommandHandler implements CommandHandler {
 
 	}
 
+	public void addCommand(CreateObjectCommand createObjectCommand) {
+		// TODO document why this method is empty
+	}
 }

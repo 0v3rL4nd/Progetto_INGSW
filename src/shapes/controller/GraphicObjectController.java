@@ -1,6 +1,7 @@
 package shapes.controller;
 
 import command.CommandHandler;
+import shapes.model.AbstractGraphicObject;
 import shapes.model.GraphicObject;
 import shapes.specificcommand.MoveCommand;
 import shapes.specificcommand.ZoomCommand;
@@ -178,4 +179,11 @@ public class GraphicObjectController extends JPanel {
 		setBorder(BorderFactory.createLineBorder(Color.LIGHT_GRAY));
 	}
 
+	public void addGraphicObject(AbstractGraphicObject object) {
+		// TODO document why this method is empty
+	}
+
+	public void removeGraphicObject(AbstractGraphicObject object) {
+		// TODO document why this method is empty
+	}
 }

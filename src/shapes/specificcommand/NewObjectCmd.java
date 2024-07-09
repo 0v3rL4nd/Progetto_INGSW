@@ -27,9 +27,8 @@ public class NewObjectCmd implements Command {
 	}
 
 	@Override
-	public boolean undoIt() {
+	public void undoIt() {
 		panel.remove(go);
-		return true;
-	}
+    }
 
 }
